@@ -1,0 +1,35 @@
+### member 등록
+POST http://localhost:8080/api/member
+Content-Type: application/json
+
+{
+  "username": "홍길동",
+  "confirm": "동에 번쩍 서에 번쩍"
+}
+
+### member 확인 - 실패: 없는 사용자
+POST http://localhost:8080/api/member/confirm
+Content-Type: application/json
+
+{
+  "username": "홍길서",
+  "confirm": "동에 번쩍 서에 번쩍"
+}
+
+### member 확인 - 실패: 확인 메세지 틀림
+POST http://localhost:8080/api/member/confirm
+Content-Type: application/json
+
+{
+  "username": "홍길동",
+  "confirm": "남에 번쩍 북에 번쩍"
+}
+
+### member 확인 - 성공
+POST http://localhost:8080/api/member/confirm
+Content-Type: application/json
+
+{
+  "username": "홍길동",
+  "confirm": "동에 번쩍 서에 번쩍"
+}
