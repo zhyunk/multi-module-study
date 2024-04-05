@@ -2,4 +2,3 @@ rootProject.name = 'multi-module-project-01'
 include 'module-library'
 include 'module-application'
 
-
