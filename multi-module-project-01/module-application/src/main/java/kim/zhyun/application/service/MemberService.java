@@ -19,13 +19,13 @@ public class MemberService {
         
         MemberEntity entity = MemberEntity.builder()
                 .username(request.getUsername())
-                .confirmOrigin(request.getConfirm())
+                .confirm(request.getConfirm())
                 .build();
         
         return memberRepository.save(entity);
     }
     
-    public boolean confirm(MemberRequest request) {
+    public void confirm(MemberRequest request) {
         requestValid(request);
         
         Optional<MemberEntity> memberContainer = memberRepository.findByUsername(request.getUsername());
@@ -35,12 +35,9 @@ public class MemberService {
         }
         
         MemberEntity entity = memberContainer.get();
-        
-        if (!entity.getConfirmOrigin().equals(request.getConfirm())) {
+        if (!entity.getConfirm().equals(request.getConfirm())) {
             throw new RuntimeException("인증 실패!!");
         }
-        
-        return true;
     }
     
     
