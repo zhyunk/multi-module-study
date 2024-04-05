@@ -5,7 +5,6 @@ import lombok.*;
 
 @Getter
 @Builder
-@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -16,7 +15,6 @@ public class MemberEntity {
     private Long id;
     
     private String username;
-    private String confirmOrigin;
     private String confirm;
     
 }
