@@ -1,0 +1,21 @@
+spring:
+  h2:
+    console:
+      enabled: false
+
+  datasource:
+    url: jdbc:h2:${my.address}\h2\application;AUTO_SERVER=TRUE;mode=MySQL;
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        highlight_sql: true
+
+---
+
+my:
+  address: 'C:\Users\xh\Documents\multi-module-study\multi-module-project-02\module-application'
